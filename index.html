@@ -1,3 +1,4 @@
+<!-- Salve este arquivo como index.html -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -59,6 +60,46 @@
     .paypal-button {
       margin-top: 1rem;
     }
+    .paypal-button a button {
+      padding: 0.8rem 1.5rem;
+      background-color: #0070ba;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .chatbox {
+      margin-top: 3rem;
+      padding: 1rem;
+      border: 2px dashed #ccc;
+      border-radius: 10px;
+      text-align: center;
+      display: none;
+    }
+    .chatbox textarea {
+      width: 100%;
+      padding: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-bottom: 1rem;
+      resize: vertical;
+    }
+    .chatbox button {
+      padding: 0.7rem 2rem;
+      background-color: #001f3f;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .chatbox .resposta {
+      margin-top: 1rem;
+      text-align: left;
+      background-color: #f9f9f9;
+      padding: 1rem;
+      border-radius: 8px;
+    }
     footer {
       text-align: center;
       padding: 1rem;
@@ -75,34 +116,40 @@
   </header>
 
   <div class="container">
-    <p>O Codex AI oferece consultoria jurídica com inteligência artificial, disponível a qualquer hora. Escolha um plano e tenha apoio prático, confiável e acessível.</p>
+    <p><strong>Sou "CodexAI"</strong> – uma inteligência jurídica de alta performance, criada para oferecer suporte especializado na elaboração de peças, contratos e análises legais com clareza, precisão e rigor técnico.</p>
+    <ul>
+      <li><strong>Missão:</strong> elaborar peças iniciais, contestações, recursos, contratos, pareceres e cláusulas legais fundamentadas.</li>
+      <li><strong>Áreas:</strong> Civil, Penal, Constitucional, Administrativo, Empresarial, Trabalhista, Tributário, Ambiental, Internacional, Eleitoral e mais.</li>
+      <li><strong>Compromisso:</strong> linguagem técnica, neutralidade ética, escopo funcional blindado e atuação conforme legislação vigente.</li>
+    </ul>
 
     <div class="precos">
       <div class="plano">
         <h2>Consulta por Hora</h2>
         <p>R$ 30,00</p>
-        <div class="paypal-button" id="paypal-hora">
-          <div id="paypal-container-UMRFEP89V2AXE"></div>
-          <script>
-            paypal.HostedButtons({
-              hostedButtonId: "UMRFEP89V2AXE",
-            }).render("#paypal-container-UMRFEP89V2AXE")
-          </script>
+        <div class="paypal-button">
+          <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=UMRFEP89V2AXE" target="_blank">
+            <button onclick="mostrarChat()">Pagar e Acessar Chat</button>
+          </a>
         </div>
       </div>
 
       <div class="plano">
         <h2>Assinatura Mensal</h2>
         <p>R$ 127,00</p>
-        <div class="paypal-button" id="paypal-mensal">
-          <div id="paypal-container-8E93Z5RVPQDM4"></div>
-          <script>
-            paypal.HostedButtons({
-              hostedButtonId: "8E93Z5RVPQDM4",
-            }).render("#paypal-container-8E93Z5RVPQDM4")
-          </script>
+        <div class="paypal-button">
+          <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8E93Z5RVPQDM4" target="_blank">
+            <button onclick="mostrarChat()">Assinar e Acessar Chat</button>
+          </a>
         </div>
       </div>
+    </div>
+
+    <div class="chatbox" id="chatbox">
+      <h2>Fale com a Codex AI</h2>
+      <textarea id="pergunta" rows="4" placeholder="Digite sua dúvida jurídica aqui..."></textarea>
+      <button onclick="responderPergunta()">Perguntar ao Codex AI</button>
+      <div class="resposta" id="resposta"></div>
     </div>
   </div>
 
@@ -110,8 +157,31 @@
     <p>&copy; 2025 Codex AI | www.medicaldor.com.br</p>
   </footer>
 
-  <script 
-    src="https://www.paypal.com/sdk/js?client-id=BAAaVkUxaVBs6tRyAIsC5SzH1jhrwK-GialFVALkLGvy6BVhXUENAbFKPsHsU23Sj2bs_PxNIzZ5IzAYCw&components=hosted-buttons&disable-funding=venmo&currency=BRL">
+  <script>
+    function mostrarChat() {
+      document.getElementById("chatbox").style.display = "block";
+    }
+
+    function responderPergunta() {
+      const pergunta = document.getElementById("pergunta").value.toLowerCase();
+      const resposta = document.getElementById("resposta");
+      if (pergunta.trim() === "") {
+        resposta.innerHTML = "Por favor, digite uma dúvida.";
+        return;
+      }
+
+      if (pergunta.includes("indeniza") || pergunta.includes("voo")) {
+        resposta.innerHTML = "Você pode ter direito sim! Segundo o Código de Defesa do Consumidor, companhias aéreas são responsáveis por atrasos. Recomendo consultar um advogado para análise do caso concreto.";
+      } else if (pergunta.includes("contrato")) {
+        resposta.innerHTML = "Posso ajudar a estruturar ou revisar contratos com cláusulas claras e seguras, com base nas normas do Código Civil.";
+      } else if (pergunta.includes("trabalho") || pergunta.includes("emprego")) {
+        resposta.innerHTML = "Para assuntos trabalhistas, posso auxiliar com base na CLT, como direitos em demissões, férias, FGTS e mais.";
+      } else if (pergunta.includes("tribut") || pergunta.includes("imposto")) {
+        resposta.innerHTML = "Em matéria tributária, posso oferecer apoio técnico sobre obrigações fiscais, regimes de tributação e planejamento legal.";
+      } else {
+        resposta.innerHTML = "Codex AI está processando sua dúvida com base em normas legais e boa prática jurídica. Para casos específicos, sempre consulte um profissional habilitado.";
+      }
+    }
   </script>
 </body>
 </html>
