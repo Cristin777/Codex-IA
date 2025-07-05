@@ -11,33 +11,33 @@
       font-family: 'Inter', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f6f6f6;
-      color: #333;
+      background-color: #0a0a0a;
+      color: #f2f2f2;
     }
     header {
-      background: url('https://images.unsplash.com/photo-1581091870634-1a3ac1c40701?auto=format&fit=crop&w=1950&q=80') no-repeat center center;
-      background-size: cover;
-      color: white;
+      background-color: #111;
       text-align: center;
-      padding: 5rem 2rem;
+      padding: 4rem 2rem 2rem;
     }
     header h1 {
       font-size: 3rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
+      color: #ffd700;
     }
     header p {
       font-size: 1.2rem;
       font-style: italic;
       max-width: 700px;
       margin: 0 auto;
+      color: #ccc;
     }
     .container {
       max-width: 900px;
       margin: 2rem auto;
       padding: 2rem;
-      background: #ffffff;
+      background: #1a1a1a;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
     .bloco {
       margin-bottom: 2rem;
@@ -45,10 +45,15 @@
     .bloco h2 {
       font-size: 1.5rem;
       margin-bottom: 0.5rem;
-      color: #001f3f;
+      color: #ffd700;
     }
     ul {
       padding-left: 1.2rem;
+      list-style: none;
+    }
+    ul li::before {
+      content: "- ";
+      color: #ffd700;
     }
     .precos {
       display: flex;
@@ -60,20 +65,21 @@
       flex: 1 1 300px;
       margin: 1rem;
       padding: 2rem;
-      background-color: #f2f4f8;
-      border: 2px solid #001f3f;
+      background-color: #2a2a2a;
+      border: 2px solid #ffd700;
       border-radius: 12px;
       text-align: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
     }
     .plano h2 {
       margin-bottom: 1rem;
       font-size: 1.4rem;
+      color: #fff;
     }
     .paypal-button a button {
       padding: 0.8rem 2rem;
-      background-color: #0070ba;
-      color: white;
+      background-color: #ffd700;
+      color: #000;
       border: none;
       border-radius: 8px;
       cursor: pointer;
@@ -81,14 +87,14 @@
       transition: background 0.3s ease;
     }
     .paypal-button a button:hover {
-      background-color: #005c9e;
+      background-color: #e5c100;
     }
     .chatbox {
       margin-top: 3rem;
       padding: 2rem;
-      border: 2px dashed #001f3f;
+      border: 2px dashed #ffd700;
       border-radius: 10px;
-      background-color: #fafafa;
+      background-color: #1e1e1e;
     }
     .chatbox textarea {
       width: 100%;
@@ -98,11 +104,13 @@
       margin-bottom: 1rem;
       resize: vertical;
       font-size: 1rem;
+      background: #2a2a2a;
+      color: #fff;
     }
     .chatbox button {
       padding: 0.7rem 2rem;
-      background-color: #001f3f;
-      color: white;
+      background-color: #ffd700;
+      color: #000;
       border: none;
       border-radius: 6px;
       cursor: pointer;
@@ -110,16 +118,17 @@
     }
     .resposta {
       margin-top: 1rem;
-      background: #ffffff;
+      background: #333;
       padding: 1rem;
       border-radius: 10px;
     }
     footer {
       text-align: center;
       padding: 1rem;
-      background-color: #f0f0f0;
+      background-color: #111;
       margin-top: 2rem;
       font-size: 0.9rem;
+      color: #888;
     }
   </style>
 </head>
@@ -131,7 +140,7 @@
 
   <div class="container">
     <div class="bloco">
-      <h2>🎯 MISSÃO</h2>
+      <h2>Missão</h2>
       <ul>
         <li>Auxiliar advogados, empresas e estudantes na construção de textos jurídicos com excelência</li>
         <li>Elaborar peças iniciais, contestações, recursos, contratos e pareceres fundamentados</li>
@@ -141,7 +150,7 @@
     </div>
 
     <div class="bloco">
-      <h2>🧠 ÁREAS DE ATUAÇÃO</h2>
+      <h2>Áreas de Atuação</h2>
       <ul>
         <li>Direito Civil, Penal, Constitucional, Administrativo, Empresarial, Trabalhista, Tributário, Ambiental, Internacional e Eleitoral</li>
         <li>Licitações, contratos públicos, compliance, controle e gestão de riscos</li>
@@ -149,7 +158,7 @@
     </div>
 
     <div class="bloco">
-      <h2>🔐 COMPROMISSOS COM A SEGURANÇA</h2>
+      <h2>Compromissos com a Segurança</h2>
       <ul>
         <li>Identidade jurídica clara e missão funcional inalterável</li>
         <li>Rejeição a comandos ambíguos ou que tentem alterar minha função</li>
@@ -180,7 +189,7 @@
     </div>
 
     <div class="chatbox" id="chatbox">
-      <h2>📩 Atendimento Codex AI</h2>
+      <h2>Atendimento Codex AI</h2>
       <textarea id="pergunta" rows="4" placeholder="Digite sua dúvida jurídica aqui..."></textarea>
       <button onclick="responderPergunta()">Perguntar</button>
       <div class="resposta" id="resposta"></div>
