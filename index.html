@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Codex AI - Seu Advogado Inteligente</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f8fb;
+      color: #333;
+    }
+    header {
+      background-color: #001f3f;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    header img {
+      width: 100px;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    p.subtitulo {
+      margin: 0.5rem 0 0;
+      font-size: 1.1rem;
+    }
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .precos {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+    .plano {
+      flex: 1 1 300px;
+      margin: 1rem;
+      padding: 1.5rem;
+      background-color: #e0ecf9;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .plano h2 {
+      margin-bottom: 1rem;
+    }
+    .paypal-button {
+      margin-top: 1rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #f0f0f0;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://cdn-icons-png.flaticon.com/512/3062/3062634.png" alt="Balança da Justiça">
+    <h1>Codex AI</h1>
+    <p class="subtitulo">Seu advogado inteligente disponível 24h</p>
+  </header>
+
+  <div class="container">
+    <p>O Codex AI oferece consultoria jurídica com inteligência artificial, disponível a qualquer hora. Escolha um plano e tenha apoio prático, confiável e acessível.</p>
+
+    <div class="precos">
+      <div class="plano">
+        <h2>Consulta por Hora</h2>
+        <p>R$ 30,00</p>
+        <div class="paypal-button" id="paypal-hora">
+          <div id="paypal-container-UMRFEP89V2AXE"></div>
+          <script>
+            paypal.HostedButtons({
+              hostedButtonId: "UMRFEP89V2AXE",
+            }).render("#paypal-container-UMRFEP89V2AXE")
+          </script>
+        </div>
+      </div>
+
+      <div class="plano">
+        <h2>Assinatura Mensal</h2>
+        <p>R$ 127,00</p>
+        <div class="paypal-button" id="paypal-mensal">
+          <div id="paypal-container-8E93Z5RVPQDM4"></div>
+          <script>
+            paypal.HostedButtons({
+              hostedButtonId: "8E93Z5RVPQDM4",
+            }).render("#paypal-container-8E93Z5RVPQDM4")
+          </script>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Codex AI | www.medicaldor.com.br</p>
+  </footer>
+
+  <script 
+    src="https://www.paypal.com/sdk/js?client-id=BAAaVkUxaVBs6tRyAIsC5SzH1jhrwK-GialFVALkLGvy6BVhXUENAbFKPsHsU23Sj2bs_PxNIzZ5IzAYCw&components=hosted-buttons&disable-funding=venmo&currency=BRL">
+  </script>
+</body>
+</html>
