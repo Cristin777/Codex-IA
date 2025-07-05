@@ -14,136 +14,84 @@
       background-color: #0a0a0a;
       color: #f2f2f2;
     }
-    header {
-      background-image: url('https://cdn.pixabay.com/photo/2017/08/06/15/13/law-2597016_1280.jpg');
-      background-size: cover;
-      background-position: center;
-      text-align: center;
-      padding: 6rem 2rem 4rem;
-      color: #fff;
-    }
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-      color: #ffd700;
-      text-shadow: 1px 1px 5px #000;
-    }
-    header p {
-      font-size: 1.2rem;
-      font-style: italic;
-      max-width: 700px;
-      margin: 0 auto;
-      color: #ddd;
-      text-shadow: 1px 1px 3px #000;
-    }
     .container {
       max-width: 900px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background: #1a1a1a;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
     }
-    .bloco {
+    .banner {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
       margin-bottom: 2rem;
     }
-    .bloco h2 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
+    h1 {
+      font-size: 2.5rem;
       color: #ffd700;
+      margin-bottom: 0.5rem;
+    }
+    p, li {
+      font-size: 1.1rem;
+      color: #ccc;
     }
     ul {
-      padding-left: 1.2rem;
+      text-align: left;
       list-style: none;
+      padding-left: 0;
     }
     ul li::before {
-      content: "- ";
+      content: "\2014\0020";
       color: #ffd700;
     }
-    .precos {
+    .bloco {
+      margin: 2rem 0;
+      text-align: left;
+    }
+    .pix-button {
+      background-color: #2e7d32;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      display: inline-block;
+    }
+    .planos {
       display: flex;
       justify-content: space-around;
       flex-wrap: wrap;
-      margin-top: 2rem;
+      gap: 30px;
+      margin-top: 30px;
     }
     .plano {
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.05);
       flex: 1 1 300px;
-      margin: 1rem;
-      padding: 2rem;
-      background-color: #2a2a2a;
-      border: 2px solid #ffd700;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+      max-width: 350px;
     }
-    .plano h2 {
-      margin-bottom: 1rem;
-      font-size: 1.4rem;
-      color: #fff;
-    }
-    .paypal-button a button {
-      padding: 0.8rem 2rem;
-      background-color: #ffd700;
-      color: #000;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 1.1rem;
-      transition: background 0.3s ease;
-    }
-    .paypal-button a button:hover {
-      background-color: #e5c100;
-    }
-    .chatbox {
-      margin-top: 3rem;
-      padding: 2rem;
-      border: 2px dashed #ffd700;
-      border-radius: 10px;
-      background-color: #1e1e1e;
-    }
-    .chatbox textarea {
-      width: 100%;
-      padding: 1rem;
-      border-radius: 10px;
-      border: 1px solid #ccc;
-      margin-bottom: 1rem;
-      resize: vertical;
-      font-size: 1rem;
-      background: #2a2a2a;
-      color: #fff;
-    }
-    .chatbox button {
-      padding: 0.7rem 2rem;
-      background-color: #ffd700;
-      color: #000;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-    .resposta {
-      margin-top: 1rem;
-      background: #333;
-      padding: 1rem;
-      border-radius: 10px;
+    .paypal-button {
+      margin-top: 10px;
     }
     footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: #111;
-      margin-top: 2rem;
-      font-size: 0.9rem;
+      margin-top: 40px;
+      font-size: 0.9em;
       color: #888;
+      text-align: center;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Codex AI</h1>
-    <p>Seu advogado digital com inteligência jurídica de alta performance</p>
-  </header>
-
   <div class="container">
+    <img src="https://cdn.pixabay.com/photo/2017/08/06/15/13/law-2597016_1280.jpg" alt="Banner Codex AI" class="banner" />
+
+    <h1>Codex AI</h1>
+    <p><strong>Seu advogado digital com inteligência jurídica de alta performance</strong></p>
+
     <div class="bloco">
       <h2>Missão</h2>
       <ul>
@@ -171,62 +119,33 @@
       </ul>
     </div>
 
-    <div class="precos">
+    <a class="pix-button" href="mailto:cristin.rocha7@gmail.com?subject=Contribuição via Pix">Contribuir via Pix: cristin.rocha7@gmail.com</a>
+
+    <div class="planos">
       <div class="plano">
         <h2>Consulta por Hora</h2>
         <p>R$ 30,00</p>
-        <div class="paypal-button">
-          <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=UMRFEP89V2AXE" target="_blank">
-            <button onclick="mostrarChat()">Pagar e Acessar Chat</button>
-          </a>
-        </div>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" class="paypal-button">
+          <input type="hidden" name="cmd" value="_s-xclick" />
+          <input type="hidden" name="hosted_button_id" value="UMRFEP89V2AXE" />
+          <input type="image" src="https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="Pague com PayPal" />
+        </form>
       </div>
 
       <div class="plano">
         <h2>Assinatura Mensal</h2>
         <p>R$ 127,00</p>
-        <div class="paypal-button">
-          <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8E93Z5RVPQDM4" target="_blank">
-            <button onclick="mostrarChat()">Assinar e Acessar Chat</button>
-          </a>
-        </div>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" class="paypal-button">
+          <input type="hidden" name="cmd" value="_s-xclick" />
+          <input type="hidden" name="hosted_button_id" value="8E93Z5RVPQDM4" />
+          <input type="image" src="https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="Pague com PayPal" />
+        </form>
       </div>
     </div>
 
-    <div class="chatbox" id="chatbox">
-      <h2>Atendimento Codex AI</h2>
-      <textarea id="pergunta" rows="4" placeholder="Digite sua dúvida jurídica aqui..."></textarea>
-      <button onclick="responderPergunta()">Perguntar</button>
-      <div class="resposta" id="resposta"></div>
-    </div>
+    <footer>
+      &copy; 2025 Codex AI | www.medicaldor.com.br
+    </footer>
   </div>
-
-  <footer>
-    <p>&copy; 2025 Codex AI | www.medicaldor.com.br</p>
-  </footer>
-
-  <script>
-    function mostrarChat() {
-      document.getElementById("chatbox").style.display = "block";
-    }
-
-    function responderPergunta() {
-      const pergunta = document.getElementById("pergunta").value.toLowerCase();
-      const resposta = document.getElementById("resposta");
-      if (pergunta.trim() === "") {
-        resposta.innerHTML = "Por favor, digite uma dúvida.";
-        return;
-      }
-
-      if (pergunta.includes("indeniza") || pergunta.includes("voo")) {
-        resposta.innerHTML = "Você pode ter direito sim! Segundo o Código de Defesa do Consumidor, companhias aéreas são responsáveis por atrasos. Recomendo consultar um advogado para análise do caso concreto.";
-      } else if (pergunta.includes("contrato")) {
-        resposta.innerHTML = "Posso ajudar a estruturar ou revisar contratos com cláusulas claras e seguras, com base nas normas do Código Civil.";
-      } else if (pergunta.includes("trabalho") || pergunta.includes("emprego")) {
-        resposta.innerHTML = "Para assuntos trabalhistas, posso auxiliar com base na CLT, como direitos em demissões, férias, FGTS e mais.";
-      } else if (pergunta.includes("tribut") || pergunta.includes("imposto")) {
-        resposta.innerHTML = "Em matéria tributária, posso oferecer apoio técnico sobre obrigações fiscais, regimes de tributação e planejamento legal.";
-      } else {
-        resposta.innerHTML = "Codex AI está processando sua dúvida com base em normas legais e boa prática jurídica. Para casos específicos, sempre consulte um profissional habilitado.";
-      }
-    }
+</body>
+</html>
